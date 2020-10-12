@@ -24,10 +24,11 @@ class ComentariossController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function nuevoComentario(Request $request)
+    public function nuevoComentario(Request $request,$id)
     {
         $comentarios=new Comentarioss;
         $comentarios->Contenido=$request->Contenido;
+        $Comentarios->Producto=$id->producto;
         $comentarios->save();
         return '¡Comentario guardado Guardado!';
     }

@@ -38,10 +38,12 @@ class ProductosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function Relacion(Request $nombre)
+    public function Relacion(Request $Nombre)
     {
-        $products=DB::table('productos')
-        ->join('comentarios','comentarios.productos','=','productos.id','and','productos.Nombre','=',$nombre)
+        $produc=new Productos;
+        $produc->Nombre;
+        $products=productosperronesdb::table('productos')
+        ->join('comentarios','comentarios.productos','=','productos.id','and','productos.Nombre','=',$produc)
         ->select('productos.Nombre','comentarios.Contenido');
         return $products;
     }
