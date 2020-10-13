@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Productos;
 use Illuminate\Http\Request;
+//use productosperronesdb;
+use Illuminate\Support\Facades\DB;
 
 class ProductosController extends Controller
 {
@@ -40,12 +42,14 @@ class ProductosController extends Controller
      */
     public function Relacion(Request $Nombre)
     {
-        $produc=new Productos;
-        $produc->Nombre;
-        $products=productosperronesdb::table('productos')
-        ->join('comentarios','comentarios.productos','=','productos.id','and','productos.Nombre','=',$produc)
-        ->select('productos.Nombre','comentarios.Contenido');
-        return $products;
+       
+        $products=DB::table('productos')
+        ->join('comentarios','comentarios.productos','=','productos.id')
+        ->where('productos.nombre','=',$Nombre->Nombre)
+        ->orWhere('productos.id','=',$Nombre->id)
+        ->select('productos.Nombre','comentarios.Contenido')
+        ->get();
+        dd ($products);
     }
 
     /**

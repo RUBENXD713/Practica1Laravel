@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comentarioss;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ComentariossController extends Controller
 {
@@ -24,11 +25,11 @@ class ComentariossController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function nuevoComentario(Request $request,$id)
+    public function nuevoComentario(Request $request)
     {
         $comentarios=new Comentarioss;
         $comentarios->Contenido=$request->Contenido;
-        $Comentarios->Producto=$id->producto;
+        $comentarios->productos=$request->Producto;
         $comentarios->save();
         return '¡Comentario guardado Guardado!';
     }
@@ -39,9 +40,14 @@ class ComentariossController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function comentarioProducto(Request $Nombre)
     {
-        //
+        $products=DB::table('productos')
+        ->join('comentarios','comentarios.productos','=','productos.id')
+        ->where('productos.nombre','=',$Nombre->Producto)
+        ->select('comentarios.id','comentarios.Contenido')
+        ->get();
+        dd ($products);
     }
 
     /**
