@@ -58,9 +58,13 @@ class ProductosController extends Controller
      * @param  \App\Productos  $productos
      * @return \Illuminate\Http\Response
      */
-    public function show(Productos $productos)
+    public function Delete(Request $request)
     {
-        //
+        $products=DB::table('productos')
+        ->join('comentarios','comentarios.productos','=','productos.id')
+        ->where('productos.id','=',$request->id)
+        ->delete();
+        return 'Eliminacion Exitosa!!';
     }
 
     /**

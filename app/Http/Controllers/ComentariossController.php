@@ -56,10 +56,15 @@ class ComentariossController extends Controller
      * @param  \App\Comentarioss  $comentarioss
      * @return \Illuminate\Http\Response
      */
-    public function show(Comentarioss $comentarioss)
+    public function delete(Request $request)
     {
-        //
+        $products=DB::table('comentarios')
+        ->from('comentarios')
+        ->where('comentarios.id','=',$request->id)
+        ->delete();
+        return 'Eliminacion Exitosa!!';      
     }
+    
 
     /**
      * Show the form for editing the specified resource.

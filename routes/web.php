@@ -20,6 +20,8 @@ Route::get('NewProduct','ProductosController@createProductos');
 Route::get('Comentarioss','ComentariossController@getComentario');
 Route::get('ComentarioNuevo','ComentariossController@nuevoComentario');
 Route::get('ProductoComentario','ComentariossController@comentarioProducto');
+Route::get('Eliminar','ComentariossController@delete');
+Route::get('EliminarProductos','ComentariossController@Delete');
 /*Route::get('/', function () {
   return view('welcome');
 });*/

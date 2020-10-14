@@ -13,7 +13,7 @@ class ProductosSeeder extends Seeder
     {
         DB::table('productos')->insert([
             
-        ])
+        ]);
         $productos=factory(App\Productos::class,5)->create();
     }
 }
