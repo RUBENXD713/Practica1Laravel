@@ -16,7 +16,6 @@ class CreateProductosTable extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
             $table->string('Nombre',100);
-            $table->timestamps();
         });
     }
 
@@ -31,7 +30,6 @@ class CreateProductosTable extends Migration
         {
             $table->id();
             $table->string('Nombre',100);
-            $table->timestamps();
         });
 
     }

@@ -18,7 +18,6 @@ class CreateComentariossesTable extends Migration
             $table->string('Contenido');
             $table->unsignedBigInteger('productos');
             $table->foreign('productos')->references('id')->on('productos');            
-            $table->timestamps();
         });
     }
 
@@ -33,7 +32,6 @@ class CreateComentariossesTable extends Migration
             $table->string('Contenido');
             $table->unsignedBigInteger('productos');
             $table->foreign('productos')->references('id')->on('productos');            
-            $table->timestamps();
         Schema::dropIfExists('comentarios');
     }
 }
