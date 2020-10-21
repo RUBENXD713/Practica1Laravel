@@ -12,28 +12,28 @@ class ProductosSeeder extends Seeder
     public function run()
     {
         DB::table('productos')->insert([
-            'Nombre'=> 'Mac',
+            'Nombre'=> 'Mac'
         ]);
         DB::table('productos')->insert([
             'Nombre'=> 'Skate futurista',
         ]);
         DB::table('productos')->insert([
-            'Nombre'=> 'Carro',
+            'Nombre'=> 'Carro'
         ]);
         DB::table('productos')->insert([
-            'Nombre'=> 'Pc Gamer',
+            'Nombre'=> 'Pc Gamer'
         ]);
         DB::table('productos')->insert([
-            'Nombre'=> 'Cellphone',
+            'Nombre'=> 'Cellphone'
         ]);
         DB::table('productos')->insert([
-            'Nombre'=> 'Iphone',
+            'Nombre'=> 'Iphone'
         ]);
          DB::table('productos')->insert([
-            'Nombre'=> 'Huawei',
+            'Nombre'=> 'Huawei'
         ]);
         DB::table('productos')->insert([
-            'Nombre'=> 'MinePoke',
+            'Nombre'=> 'MinePoke'
         ]);   
         $productos=factory(App\Productos::class,5)->create();
     }
