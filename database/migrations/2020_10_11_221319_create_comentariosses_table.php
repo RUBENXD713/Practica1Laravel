@@ -29,6 +29,11 @@ class CreateComentariossesTable extends Migration
      */
     public function down()
     {
+            $table->id();
+            $table->string('Contenido');
+            $table->unsignedBigInteger('productos');
+            $table->foreign('productos')->references('id')->on('productos');            
+            $table->timestamps();
         Schema::dropIfExists('comentarios');
     }
 }

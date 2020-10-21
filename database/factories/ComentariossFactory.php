@@ -8,6 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(Comentarioss::class, function (Faker $faker) {
     return [
         'comentario'=>$faker->text,
-        'producto_id'=> App\Productos::All()->random()->id,
+        'productos'=> App\Productos::All()->random()->id,
     ];
 });

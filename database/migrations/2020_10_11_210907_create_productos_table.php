@@ -29,7 +29,9 @@ class CreateProductosTable extends Migration
     {
         Schema::dropIfExists('productos',function(Blueprint $table)
         {
-
+            $table->id();
+            $table->string('Nombre',100);
+            $table->timestamps();
         });
 
     }
