@@ -14,7 +14,7 @@ use app\Http\Controllers\ComentariossController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('Relacion','ProductosController@Relacion');
+/*Route::get('Relacion','ProductosController@Relacion');
 Route::get('Productos','ProductosController@getProductos');
 Route::get('NewProduct','ProductosController@createProductos');
 Route::get('Comentarioss','ComentariossController@getComentario');
@@ -23,7 +23,7 @@ Route::get('ProductoComentario','ComentariossController@comentarioProducto');
 Route::get('Eliminar','ComentariossController@delete');
 Route::get('EliminarProductos','ComentariossController@Delete');
 Route::put('actualizarProducto/{id}','ProductosController@actualizar');
-Route::put('actualizarComentario/{id}','ComentariossController@actualizar');
+Route::put('actualizarComentario/{id}','ComentariossController@actualizar');*/
 /*Route::get('/', function () {
   return view('welcome');
 });*/
