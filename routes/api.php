@@ -19,6 +19,14 @@ use app\Http\Controllers\ProductosController;
     return $request->user();
 Route::get('Comentarioss',[ComentariossController::class,'getComentario']);
 Route::get('Productos',[ProductosController::class,'getProductos']);*/
+Route::get('Relacion','ProductosController@Relacion');
 Route::get('Productos','ProductosController@getProductos');
 Route::get('NewProduct','ProductosController@createProductos');
+Route::get('Comentarioss','ComentariossController@getComentario');
+Route::get('ComentarioNuevo','ComentariossController@nuevoComentario');
+Route::get('ProductoComentario','ComentariossController@comentarioProducto');
+Route::get('Eliminar','ComentariossController@delete');
+Route::get('EliminarProductos','ComentariossController@Delete');
+Route::put('actualizarProducto/{id}','ProductosController@actualizar');
+Route::put('actualizarComentario/{id}','ComentariossController@actualizar');
 //});
