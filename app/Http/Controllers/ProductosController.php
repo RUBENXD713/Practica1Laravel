@@ -73,9 +73,14 @@ class ProductosController extends Controller
      * @param  \App\Productos  $productos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Productos $productos)
-    {
-        //
+    public function actualizar(Request $request,$id)
+    {    
+        $producto=Productos::find ($id);  
+        $producto->Nombre=$request->Nombre;
+   
+        if($producto->save())
+        return response()->json(["Registro actualizado"=>$producto]);   
+        return response()->json(null,400); 
     }
 
     /**

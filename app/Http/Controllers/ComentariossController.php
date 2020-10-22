@@ -72,9 +72,15 @@ class ComentariossController extends Controller
      * @param  \App\Comentarioss  $comentarioss
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comentarioss $comentarioss)
+    public function actualizar(Request $request,$id)
     {
-        //
+        $comentario=Comentarioss::find ($id);  
+        $comentario->Contenido=$request->mensaje;
+        $comentario->productos=$request->producto;
+
+        if($comentario->save())
+        return response()->json(["Registro actualizado"=>$comentario]);   
+        return response()->json(null,400);
     }
 
     /**

@@ -22,6 +22,8 @@ Route::get('ComentarioNuevo','ComentariossController@nuevoComentario');
 Route::get('ProductoComentario','ComentariossController@comentarioProducto');
 Route::get('Eliminar','ComentariossController@delete');
 Route::get('EliminarProductos','ComentariossController@Delete');
+Route::put('actualizarProducto/{id}','ProductosController@actualizar');
+Route::put('actualizarComentario/{id}','ComentariossController@actualizar');
 /*Route::get('/', function () {
   return view('welcome');
 });*/
